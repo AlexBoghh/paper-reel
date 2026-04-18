@@ -2,7 +2,6 @@
 
 **Category:** Text Animation
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 009 — Made With Gsap.pdf
 
 ## The effect
 Short phrases are displayed letter by letter. The letters of one phrase disappear upward (or downward) at the same time as the letters of the next phrase appear from the opposite direction. Dynamic logic — add phrases and the effect continues to chain.

@@ -2,7 +2,6 @@
 
 **Category:** Text Animation
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 005 — Made With Gsap.pdf
 
 ## The effect
 Words enter from the right edge of the screen and slide to their final positions, but with a staggered start — each word begins moving slightly after the previous, producing a more elegant, paced reveal than a simultaneous slide. Tied to user scroll via ScrollTrigger.

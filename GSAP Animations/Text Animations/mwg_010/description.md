@@ -2,7 +2,6 @@
 
 **Category:** Text Animation
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 010 — Made With Gsap.pdf
 
 ## The effect
 A sentence scrolls from right to left as the user scrolls. Letters appear and disappear dynamically at the viewport edges, and are arranged along a tweakable sine wave so the line undulates — "a bit of a jazz vibe," in the author's words. Scat-singing energy.

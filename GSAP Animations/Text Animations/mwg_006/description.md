@@ -2,7 +2,6 @@
 
 **Category:** Text Animation
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 006 — Made With Gsap.pdf
 
 ## The effect
 A paragraph disappears word by word while the next paragraph appears in the same word-by-word rhythm. The logic is dynamic: add more paragraphs and the effect extends automatically. Reads like sequential captions revealing a continuous thought.

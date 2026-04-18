@@ -2,7 +2,6 @@
 
 **Category:** Card Scroll
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 023 — Made With Gsap.pdf
 
 ## The effect
 Images continuously orbit around a large circle based on the user's scroll. The faster the user scrolls, the more certain images drift outward from their orbit before snapping back, giving a subtle elastic-velocity feel. Container extends beyond the screen to create the curved path.

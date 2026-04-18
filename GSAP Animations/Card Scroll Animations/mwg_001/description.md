@@ -2,7 +2,6 @@
 
 **Category:** Card Scroll
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 001 — Made With Gsap.pdf
 
 ## The effect
 Replicates the movement of a stack of cards spreading and sliding across a surface. A section is pinned during a scroll distance while its inner row moves horizontally; each card is also offset by a small random rotation, x and y translation so the deck feels scattered as it passes.

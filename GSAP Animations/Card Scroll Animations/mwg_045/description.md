@@ -2,7 +2,6 @@
 
 **Category:** Card Scroll
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 045 — Made With Gsap.pdf
 
 ## The effect
 Slides are arranged one behind the other with perspective. As the user scrolls, the slides scroll infinitely — the closest slide disappears and is re-placed at the back of the queue. The root also picks up a slight rotation from the cursor position for a subtle parallax-feel.

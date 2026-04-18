@@ -17,9 +17,9 @@ Then `/clear` the Claude Code session so the updated skill activates.
 
 ## GSAP animation library
 
-The curated library lives at `GSAP Animations/`. Start with `library.md` as the top-level index. Never read the PDF tutorials at runtime — they are source material, not runtime data. Always go `library.md` → `<folder>/description.md` → the actual code (`index.html`, `assets/script.js`, `assets/style.css`).
+The curated library lives at `GSAP Animations/`. Start with `library.md` as the top-level index. Always go `library.md` → `<folder>/description.md` → the actual code (`index.html`, `assets/script.js`, `assets/style.css`) as needed.
 
-All twelve animations are tutorials by Made With GSAP. The curation, tagging, and `description.md` annotations are this project's contribution.
+All twelve animations are ports of tutorials by [Made With GSAP](https://madewithgsap.com). The source code is preserved for agent consumption; the original written tutorials are not redistributed here — see madewithgsap.com. The curation, `description.md` annotations, `recipe.mjs` generators, and `library.md` index are this project's contribution.
 
 ## Working directories
 

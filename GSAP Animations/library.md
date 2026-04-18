@@ -5,10 +5,10 @@ A curated library of 12 scroll-driven GSAP animations, organized in two categori
 - `assets/script.js` — the GSAP logic
 - `assets/style.css` — styling
 - `assets/medias/` — supporting media
-- `Tutorial XXX — Made With Gsap.pdf` — the original tutorial
 - `description.md` — structured metadata for agent-driven citation (technique, use-when, avoid-when, mobile, accessibility, tags)
+- `recipe.mjs` — parameterized generator consumed by `tools/compose-export.mjs`
 
-All animations use **ScrollTrigger** and optionally **Lenis** for smooth scroll. All are original tutorials by Made With GSAP.
+All animations use **ScrollTrigger** and optionally **Lenis** for smooth scroll. All are original tutorials by [Made With GSAP](https://madewithgsap.com) — the source code + annotations are preserved here for agent consumption; see that site for the accompanying written tutorials.
 
 ---
 
@@ -50,7 +50,7 @@ When the user describes motion in plain language, the agent:
 4. **Cites them** in the MOTION PLAN zone of the Paper canvas with weights and reasons, quoting from each `description.md`'s "The effect" paragraph.
 5. **Reads the actual `index.html`, `script.js`, `style.css`** of the chosen citation(s) when generating the final exportable GSAP code.
 
-The PDF tutorials are not read by the agent at runtime — they're the source material for `description.md` and remain as a human-readable reference.
+The original written tutorials live at [madewithgsap.com](https://madewithgsap.com). The `description.md` files in this repo distill each tutorial's technique, use-when/avoid-when guidance, and mobile/accessibility notes into a format the agent can consume — so the agent never needs to read long-form tutorial prose at runtime.
 
 ---
 

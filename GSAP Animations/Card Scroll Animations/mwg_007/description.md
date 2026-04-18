@@ -2,7 +2,6 @@
 
 **Category:** Card Scroll
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 007 — Made With Gsap.pdf
 
 ## The effect
 Images appear to follow a rounded trajectory as the user scrolls. Each image is positioned at the edge of an oversized div that extends past the viewport; rotating the div produces a curved conveyor-belt effect. A container is pinned for the entire pin-height duration.

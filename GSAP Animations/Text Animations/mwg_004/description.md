@@ -2,7 +2,6 @@
 
 **Category:** Text Animation
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 004 — Made With Gsap.pdf
 
 ## The effect
 Words in a paragraph slide in from the right edge of the screen to their final position, with a stacking effect — each word overlaps slightly with the next. The reveal is tied to user scroll, so the paragraph assembles as the page moves. No manual `<span>` wrapping required; the script splits words automatically.

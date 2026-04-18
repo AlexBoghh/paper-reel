@@ -2,7 +2,6 @@
 
 **Category:** Card Scroll
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 042 — Made With Gsap.pdf
 
 ## The effect
 A series of cards is revealed one by one on scroll. As the topmost card disappears, the remaining deck moves forward toward the viewer, producing a smooth, weighted stacking sensation. The container is pinned for the full height of the pin-height sibling.

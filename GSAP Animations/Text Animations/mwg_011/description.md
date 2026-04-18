@@ -2,7 +2,6 @@
 
 **Category:** Text Animation
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 011 — Made With Gsap.pdf
 
 ## The effect
 A sentence scrolls from right to left as the user scrolls. As the sentence moves across the viewport, letters gradually settle into their correct positions — starting slightly jittered or offset, then resolving. The smooth version of mwg_010's jazz energy — same mechanic, no wave, letters just "land" cleanly.

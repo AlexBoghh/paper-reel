@@ -24,4 +24,4 @@ SOFTWARE.
 
 ## Third-party notice
 
-The twelve GSAP animation tutorials under `GSAP Animations/` are the work of [Made With GSAP](https://madewithgsap.com) and are included here with their original PDF tutorials preserved. The `description.md` files, `library.md` index, tagging conventions, and agent-consumption annotations in this directory are the original work of this project and are licensed under the MIT terms above.
+The source code for the twelve GSAP animations under `GSAP Animations/` (the `index.html`, `assets/script.js`, `assets/style.css`, and demo media files) is the work of [Made With GSAP](https://madewithgsap.com) and is included here under fair-use attribution for agent-consumption purposes. The accompanying written tutorials live at madewithgsap.com and are not redistributed in this repository. The `description.md` files, `recipe.mjs` files, `library.md` index, tagging conventions, and agent-consumption annotations in this directory are the original work of this project and are licensed under the MIT terms above.

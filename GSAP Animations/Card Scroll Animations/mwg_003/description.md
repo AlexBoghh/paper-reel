@@ -2,7 +2,6 @@
 
 **Category:** Card Scroll
 **Source:** `index.html`, `assets/script.js`, `assets/style.css`
-**Tutorial:** Tutorial 003 — Made With Gsap.pdf
 
 ## The effect
 Cards appear one by one from the bottom of the screen, move toward the center, then fan out in a clockwise arc like a dealer spreading a hand. Each card sits on the edge of a large circle and the circles rotate, producing the fan. Pinned for the full height of a tall pin-height sibling.

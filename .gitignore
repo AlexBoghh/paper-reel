@@ -27,6 +27,9 @@ previews/frames_tmp_bb/
 Thumbs.db
 *.swp
 
+# Tutorial PDFs (original material by Made With GSAP; see madewithgsap.com)
+GSAP Animations/**/*.pdf
+
 # Editor
 .vscode/
 .idea/
