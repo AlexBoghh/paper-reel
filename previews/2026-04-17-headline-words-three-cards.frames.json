@@ -1,0 +1,54 @@
+{
+  "samplePoints": [
+    0,
+    14,
+    28,
+    42,
+    57,
+    71,
+    85,
+    100
+  ],
+  "elements": {
+    ".mwg_effect004 .paragraph .word": [
+      {
+        "scrollPct": 0,
+        "translateX": 100
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 77.77777777777777
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 22.22222222222223
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect042 .media": [
+      {
+        "scrollPct": 42,
+        "translateY": 0
+      },
+      {
+        "scrollPct": 57,
+        "translateY": 3.736315552093157
+      },
+      {
+        "scrollPct": 71,
+        "translateY": -15
+      },
+      {
+        "scrollPct": 85,
+        "translateY": -33.73631555209316
+      },
+      {
+        "scrollPct": 100,
+        "translateY": -30
+      }
+    ]
+  }
+}

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latchkey — Records that breathe like the rooms they were born in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #f1ebdc;
+    --card: #e9e1cd;
+    --card-2: #ddd2b8;
+    --card-3: #cfc3a5;
+    --ink: #14120f;
+    --muted: rgba(20,18,15,0.55);
+    --hair: rgba(20,18,15,0.14);
+    --accent: #2d5f4c;
+  }
+  html, body { background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: 'Inter', system-ui, sans-serif; }
+
+  /* Top nav */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 22px 56px; background: rgba(241,235,220,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--hair); }
+  .nav .brand { display: flex; align-items: center; gap: 10px; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 22px; letter-spacing: -0.01em; }
+  .nav .brand .dot { width: 22px; height: 22px; background: var(--accent); border-radius: 50%; }
+  .nav .links { display: flex; align-items: center; gap: 36px; font-size: 14px; font-weight: 500; }
+  .nav .cta { background: var(--ink); color: var(--cream); padding: 10px 20px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; text-decoration: none; }
+
+  /* Hero — jazzy letter marquee */
+  .hero { position: relative; overflow: hidden; }
+  .hero .container { display: flex; height: 100vh; align-items: center; position: relative; }
+  .hero .kicker { position: absolute; top: 110px; left: 56px; right: 56px; display: flex; align-items: center; justify-content: space-between; z-index: 5; }
+  .hero .kicker .left { display: flex; align-items: center; gap: 14px; color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+  .hero .kicker .left .bar { width: 32px; height: 1px; background: var(--accent); }
+  .hero .kicker .right { text-align: right; color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .hero .text { display: flex; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-style: italic; font-size: 18vw; line-height: 0.9; letter-spacing: -0.03em; padding: 0 100vw; white-space: nowrap; width: max-content; color: var(--ink); }
+  .hero .container span:not(.letter) { padding: 0 2vw; }
+  .hero .letter { display: inline-block; visibility: hidden; padding: 0 0.2vw; }
+  .hero .scroll-hint { position: fixed; bottom: 36px; left: 50%; transform: translateX(-50%); font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); z-index: 30; display: flex; align-items: center; gap: 10px; }
+  .hero .scroll-hint .caret { width: 10px; height: 10px; border-right: 1px solid var(--muted); border-bottom: 1px solid var(--muted); transform: rotate(45deg); display: inline-block; }
+
+  /* Interlude */
+  .interlude { padding: 160px 56px 140px; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; border-top: 1px solid var(--hair); }
+  .interlude .label { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+  .interlude .copy { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 44px; line-height: 1.1; letter-spacing: -0.02em; font-style: italic; }
+
+  /* Feature cards — smooth stacking (mwg_042 topology: perspective goes on
+     the direct parent of .media, not an outer grandparent — otherwise the
+     3D chain is flattened by default transform-style on intermediate
+     elements, and z transforms produce no visible depth) */
+  .features .pin-height { height: 400vh; }
+  .features .container { height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .features .deck { position: relative; width: min(880px, 86vw); height: min(520px, 70vh); perspective: 1200px; }
+  .features .media { position: absolute; inset: 0; background: var(--card); border-radius: 20px; padding: 44px 52px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 22px 50px -30px rgba(20,18,15,0.4); will-change: transform; }
+  .features .media .top { display: flex; align-items: center; justify-content: space-between; }
+  .features .media .tag { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+  .features .media .room { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; }
+  .features .media h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: clamp(38px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.02em; max-width: 620px; }
+  .features .media p { color: var(--muted); font-size: 16px; line-height: 1.55; max-width: 520px; }
+  .features .media .foot { display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+  /* Outro */
+  .outro { padding: 140px 56px 60px; display: flex; flex-direction: column; gap: 36px; border-top: 1px solid var(--hair); }
+  .outro h2 { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 56px; line-height: 1.05; letter-spacing: -0.02em; max-width: 780px; }
+  .outro .row { display: flex; align-items: center; gap: 14px; max-width: 520px; }
+  .outro .row input { flex: 1; height: 48px; border-radius: 999px; border: 1px solid var(--hair); background: transparent; padding: 0 22px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--ink); }
+  .outro .row button { height: 48px; padding: 0 24px; border-radius: 999px; border: 0; background: var(--ink); color: var(--cream); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .outro .meta { display: flex; justify-content: space-between; padding-top: 40px; border-top: 1px solid var(--hair); color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
+
+  @media (max-width: 768px) {
+    .nav { padding: 16px 20px; }
+    .nav .links { display: none; }
+    .hero .kicker { left: 20px; right: 20px; }
+    .hero .text { font-size: 80px; }
+    .interlude { grid-template-columns: 1fr; gap: 24px; padding: 100px 20px 80px; }
+    .interlude .copy { font-size: 32px; }
+    .features .media { padding: 24px; }
+    .outro { padding: 80px 20px 40px; }
+    .outro h2 { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand"><div class="dot"></div>Latchkey</div>
+  <div class="links">
+    <a style="color:inherit;text-decoration:none;">Roster</a>
+    <a style="color:inherit;text-decoration:none;">Studio</a>
+    <a style="color:inherit;text-decoration:none;">Sessions</a>
+    <a style="color:inherit;text-decoration:none;">Contact</a>
+    <a class="cta" href="#outro">Book a session →</a>
+  </div>
+</nav>
+
+<!-- HERO — jazzy letter marquee (mwg_010) -->
+<section class="hero">
+  <div class="container">
+    <div class="kicker">
+      <div class="left"><div class="bar"></div>Issue N°037 · A small label in New Orleans</div>
+      <div class="right">By Alex Bogdan<br>16 Apr 2026</div>
+    </div>
+    <h1 class="text">Records that breathe like the rooms they were born in.</h1>
+  </div>
+  <div class="scroll-hint">Scroll <span class="caret"></span></div>
+</section>
+
+<section class="interlude">
+  <div class="label">On the studio</div>
+  <div class="copy">Three rooms, one desk, a lacquer cutter that's older than the building. Everything a record needs and nothing it doesn't.</div>
+</section>
+
+<!-- FEATURES — smooth stacking (mwg_042) -->
+<section class="features">
+  <div class="pin-height">
+    <div class="container">
+      <div class="deck">
+        <article class="media">
+          <div class="top"><div class="tag">01 · Live to tape</div><div class="room">Studio A</div></div>
+          <h3>Two-inch, sixteen-track, no edits.</h3>
+          <p>1,200 sq ft, 22-foot ceilings, a floated floor over oak. What goes to tape is what happened in the room — nothing gets edited into shape later.</p>
+          <div class="foot"><span>Up to 12 musicians</span><span>Available from May 2026</span></div>
+        </article>
+        <article class="media">
+          <div class="top"><div class="tag">02 · Hybrid mastering</div><div class="room">Room B</div></div>
+          <h3>Analog front end, digital trust.</h3>
+          <p>A Studer A80 through a Manley Variable Mu, summed down to digital stems. We cut a reference lacquer in-house for every full-length before it ships to pressing.</p>
+          <div class="foot"><span>Stems or stereo</span><span>Lacquers included</span></div>
+        </article>
+        <article class="media">
+          <div class="top"><div class="tag">03 · Field sessions</div><div class="room">On location</div></div>
+          <h3>The room is the instrument.</h3>
+          <p>Porch, pier, parish hall, kitchen table. We travel with ribbons, a Nagra IV-S, and a kettle — and we don't touch a mix until we're back at the desk.</p>
+          <div class="foot"><span>US &amp; Gulf only</span><span>Bookings 2 weeks out</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="outro" id="outro">
+  <h2>Join the mailing list — new records, new sessions, occasional postcards.</h2>
+  <div class="row">
+    <input type="email" placeholder="you@somewhere.fm">
+    <button>Subscribe</button>
+  </div>
+  <div class="meta">
+    <span>© 2026 Latchkey · NOLA</span>
+    <span>Instagram · Bandcamp</span>
+  </div>
+</section>
+
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener('DOMContentLoaded', () => {
+  /* Lenis smooth scroll, synced with ScrollTrigger */
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({ duration: 1.1 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  /* Set up both sections inside fonts.ready so the hero pin extends the
+     document BEFORE the feature section's scrollTriggers measure positions.
+     Otherwise the feature triggers are stale and the stack never animates. */
+  document.fonts.ready.then(() => {
+    /* ------- 1. HERO — jazzy letter marquee (mwg_010) ------- */
+    const heroText = document.querySelector('.hero .text');
+    wrapLettersInSpan(heroText);
+    const letters = document.querySelectorAll('.hero .letter');
+
+    const distance = heroText.clientWidth - document.body.clientWidth;
+    let sinusIncr = 0;
+
+    const scrollTween = gsap.to(heroText, {
+      x: -distance + 'px',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero .container',
+        pin: true,
+        end: '+=' + distance,
+        scrub: true
+      }
+    });
+
+    letters.forEach(letter => {
+      gsap.set(letter, {
+        y: Math.sin(sinusIncr) * (window.innerHeight * 0.18),
+        yPercent: (Math.random() - 0.5) * 80,
+        rotation: (Math.random() - 0.5) * 28,
+        autoAlpha: 1,
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: letter,
+          containerAnimation: scrollTween,
+          toggleActions: 'play reverse play reverse',
+          start: 'right 90%',
+          end: 'left 10%'
+        }
+      });
+      sinusIncr += 0.3;
+    });
+
+    gsap.to('.scroll-hint', {
+      autoAlpha: 0, duration: 0.25,
+      scrollTrigger: { trigger: '.hero', start: 'top top-=40', end: 'top top-=41', toggleActions: 'play none reverse none' }
+    });
+
+    /* ------- 2. FEATURES — smooth stacking (mwg_042, faithful port) ------- */
+    const root = document.querySelector('.features');
+    const pinHeight = root.querySelector('.pin-height');
+    const container = root.querySelector('.container');
+
+    ScrollTrigger.create({
+      trigger: pinHeight,
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: container
+    });
+
+    const gap = 30;
+    const medias = root.querySelectorAll('.media');
+    const distPerMedia = (pinHeight.clientHeight - window.innerHeight) / medias.length;
+
+    gsap.set(medias, {
+      y: gap * (medias.length - 1),
+      z: -gap * (medias.length - 1)
+    });
+
+    medias.forEach((media, index) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: pinHeight,
+          start: 'top top+=' + (distPerMedia * index),
+          end: 'bottom bottom+=' + (distPerMedia * index),
+          scrub: 0.5
+        }
+      });
+
+      for (let i = 0; i < medias.length - 1; i++) {
+        tl.to(media, {
+          y: '-=' + gap,
+          z: '+=' + gap,
+          ease: 'back.inOut(3)'
+        });
+      }
+
+      tl.to(media, {
+        yPercent: -80,
+        y: '-50vh',
+        scale: 1.2,
+        rotation: (Math.random() - 0.5) * 40,
+        ease: 'power4.in'
+      });
+    });
+
+    /* Hero pin extends the document height on the next frame — triggers
+       created synchronously above measure pre-extension positions. Refresh
+       after a frame, and again after load, so every trigger re-measures
+       against the final document height. */
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+    setTimeout(() => ScrollTrigger.refresh(), 100);
+  });
+});
+
+window.addEventListener('load', () => {
+  if (window.ScrollTrigger) ScrollTrigger.refresh();
+});
+
+function wrapLettersInSpan(element) {
+  const text = element.textContent;
+  element.innerHTML = text
+    .split('')
+    .map(c => c === ' ' ? '<span>&nbsp;</span>' : `<span class="letter">${c}</span>`)
+    .join(' ');
+}
+</script>
+
+</body>
+</html>

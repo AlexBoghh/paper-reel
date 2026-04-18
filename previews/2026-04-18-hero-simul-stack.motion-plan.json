@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "timestamp": "2026-04-18-hero-simul-stack",
+  "parent": null,
+  "viewport": { "w": 1440, "h": 900 },
+  "duration": 100,
+  "citations": [
+    {
+      "recipeId": "mwg_004",
+      "role": "PRIMARY",
+      "category": "TEXT",
+      "opts": {
+        "rootSelector": ".mwg_effect004_r01",
+        "pinHeightSelector": ".mwg_effect004_r01 .pin-height",
+        "containerSelector": ".mwg_effect004_r01 .container",
+        "paragraphSelector": ".mwg_effect004_r01 .paragraph",
+        "staggerEach": 0.2
+      }
+    },
+    {
+      "recipeId": "mwg_042",
+      "role": "SECONDARY",
+      "category": "CARD SCROLL",
+      "opts": {
+        "rootSelector": ".mwg_effect042_r02",
+        "pinHeightSelector": ".mwg_effect042_r02 .pin-height",
+        "containerSelector": ".mwg_effect042_r02 .container",
+        "mediaSelector": ".mwg_effect042_r02 .media",
+        "gap": 30
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "words-reveal",
+      "recipeId": "mwg_004",
+      "scrollRange": [0, 42],
+      "primitives": [
+        {
+          "kind": "translateX",
+          "selector": ".mwg_effect004_r01 .paragraph .word",
+          "from": 1415,
+          "to": 0,
+          "ease": "power1.inOut",
+          "stagger": { "count": 11, "amount": 0.2 }
+        }
+      ]
+    },
+    {
+      "id": "cards-stack",
+      "recipeId": "mwg_042",
+      "scrollRange": [42, 100],
+      "primitives": [
+        {
+          "kind": "translateY",
+          "selector": ".mwg_effect042_r02 .media",
+          "from": 60,
+          "to": -30,
+          "ease": "back.inOut(3)",
+          "stagger": { "count": 3, "amount": 0.33 }
+        }
+      ]
+    }
+  ],
+  "params": {
+    "mwg_004": {
+      "pin": true,
+      "scrub": true,
+      "ease": "power1.inOut",
+      "stagger": 0.2,
+      "start": "top top",
+      "end": "bottom bottom"
+    },
+    "mwg_042": {
+      "pin": true,
+      "scrub": 0.5,
+      "ease": "back.inOut(3)",
+      "start": "top top",
+      "end": "bottom bottom"
+    }
+  },
+  "captions": [
+    "Blank start — words queued offstage right.",
+    "First words landing from the right.",
+    "Second line mid-slide, stacking.",
+    "Headline resolved — deck handoff.",
+    "Deck pinned; first card forward.",
+    "Top card exits, deck steps forward.",
+    "Second card exits, third revealed.",
+    "Final card tips out, scene ends."
+  ],
+  "content": {
+    "mwg_004": {
+      "headline": "Three places. One quiet year. What the ground kept."
+    },
+    "mwg_042": {
+      "cards": [
+        { "label": "Marfa, TX" },
+        { "label": "Tasmania" },
+        { "label": "Faroe Islands" }
+      ]
+    }
+  }
+}

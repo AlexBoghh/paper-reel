@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-04-17-headline-words-three-cards</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#f1ebdc;color:#14120f;font-family:'Inter',sans-serif}
+
+/* mwg_004 */
+
+.mwg_effect004 .scroll {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.mwg_effect004 .pin-height {
+    height: 500vh;
+}
+.mwg_effect004 .header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 25px;
+    left: 25px;
+    right: 25px;
+}
+.mwg_effect004 .header .left {
+    font-size: 1.2vw;
+}
+.mwg_effect004 .header .right {
+    display: flex;
+    gap: 1em;
+    text-align: right;
+    font: 500 normal 0.9vw / normal 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    align-items: center;
+}
+.mwg_effect004 .header img {
+    border-radius: 0.2em;
+    aspect-ratio: 1;
+    height: 4.6vw;
+    object-fit: cover;
+}
+.mwg_effect004 .container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    overflow: hidden;
+}
+.mwg_effect004 .paragraph {
+    width: 60%;
+    font: 500 normal 3.9vw/0.9 'Inter', sans-serif;
+    letter-spacing: -0.03em;
+}
+.mwg_effect004 .paragraph .word {
+    display: inline-block;
+    transform: translate(calc(100vw - 25px), 0);
+}
+
+@media (max-width: 900px) {
+    .mwg_effect004 .header {display: block;}
+    .mwg_effect004 .header .left {font-size: 16px}
+    .mwg_effect004 .header .right {
+        font-size: 13px;
+        margin: 15px 0 0;
+    }
+    .mwg_effect004 .header .right p {
+        order: 2;
+        text-align: left;
+    }
+    .mwg_effect004 .header img {
+        height: 58px;
+        order: 1;
+    }
+    .mwg_effect004 .paragraph {
+        font-size: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .mwg_effect004 .header {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+    }
+    .mwg_effect004 .paragraph .word {
+        transform: translate(calc(100vw - 15px), 0);
+    }
+}
+@media (max-width: 500px) {
+    .mwg_effect004 .container {
+        align-items: flex-end;
+        padding: 0 15px 74px;
+    }
+    .mwg_effect004 .paragraph {
+        width: 100%;
+    }
+    .mwg_effect004 .paragraph .word {
+        display: inline-block;
+    }
+}
+
+
+/* mwg_042 */
+
+.mwg_effect042 .pin-height {
+    height: 500vh;
+}
+.mwg_effect042 .container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mwg_effect042 .text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    font: 500 normal 1.6vw / normal 'Inter', sans-serif;
+    letter-spacing: -0.03em;
+    transform: translate(0, -50%);
+}
+.mwg_effect042 .medias {
+    width: 22%;
+    aspect-ratio: 0.75;
+    perspective: 25vw;
+}
+.mwg_effect042 .media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1vw;
+}
+
+@media (max-width: 768px) {
+    .mwg_effect042 .text {
+        display: none;
+    }
+    .mwg_effect042 .medias {
+        width: 50%;
+        perspective: 50vw;
+    }
+}
+
+</style>
+</head><body>
+<!-- mwg_004 markup contract -->
+<section class="mwg_effect004">
+  <div class="pin-height">
+    <div class="container">
+      <p class="paragraph">Dispatches from three distant coastlines — written slow, arriving one word at a time.</p>
+    </div>
+  </div>
+</section>
+<!-- mwg_042 markup contract -->
+<section class="mwg_effect042">
+  <div class="pin-height">
+    <div class="container">
+      <div class="medias">
+      <div class="media" style="background:#1a0f08;color:#f0ebe0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;">Marfa, TX</div>
+      <div class="media" style="background:#1a0f08;color:#f0ebe0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;">Tasmania</div>
+      <div class="media" style="background:#1a0f08;color:#f0ebe0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;">Lofoten</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+window.addEventListener('DOMContentLoaded', () => {
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({ duration: 1.1 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+
+const pinHeight_mwg_004 = document.querySelector('.mwg_effect004 .pin-height');
+const container_mwg_004 = document.querySelector('.mwg_effect004 .container');
+const paragraph_mwg_004 = document.querySelector('.mwg_effect004 .paragraph');
+wrapWordsInSpan(paragraph_mwg_004);
+
+const words_mwg_004 = paragraph_mwg_004.querySelectorAll('.word');
+
+ScrollTrigger.create({
+  trigger: pinHeight_mwg_004,
+  start: 'top top',
+  end: 'bottom bottom',
+  pin: container_mwg_004
+});
+
+const lines_mwg_004 = [[]];
+let lineIndex_mwg_004 = 0;
+
+for (let i = 0; i < words_mwg_004.length; i++) {
+  const word = words_mwg_004[i];
+  const offsetTop = word.offsetTop;
+  if (i > 0 && offsetTop !== words_mwg_004[i - 1].offsetTop) {
+    lines_mwg_004.push([]);
+    lineIndex_mwg_004++;
+  }
+  lines_mwg_004[lineIndex_mwg_004].push(word);
+}
+
+lines_mwg_004.forEach(lineWords => {
+  gsap.to(lineWords, {
+    x: 0,
+    stagger: 0.2,
+    ease: 'power1.inOut',
+    scrollTrigger: {
+      trigger: '.mwg_effect004',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true
+    }
+  });
+});
+
+
+const root_mwg_042 = document.querySelector('.mwg_effect042');
+const pinHeight_mwg_042 = root_mwg_042.querySelector('.pin-height');
+const container_mwg_042 = root_mwg_042.querySelector('.container');
+
+ScrollTrigger.create({
+  trigger: pinHeight_mwg_042,
+  start: 'top top',
+  end: 'bottom bottom',
+  pin: container_mwg_042
+});
+
+let gap_mwg_042 = 30;
+const medias_mwg_042 = root_mwg_042.querySelectorAll('.media');
+const distPerMedia_mwg_042 = (pinHeight_mwg_042.clientHeight - window.innerHeight) / medias_mwg_042.length;
+
+gsap.set(medias_mwg_042, {
+  y: gap_mwg_042 * (medias_mwg_042.length - 1),
+  z: -gap_mwg_042 * (medias_mwg_042.length - 1)
+});
+
+medias_mwg_042.forEach((media, index) => {
+  const tl_mwg_042 = gsap.timeline({
+    scrollTrigger: {
+      trigger: pinHeight_mwg_042,
+      start: 'top top+=' + (distPerMedia_mwg_042 * index),
+      end: 'bottom bottom+=' + (distPerMedia_mwg_042 * index),
+      scrub: 0.5
+    }
+  });
+
+  for (let i = 0; i < medias_mwg_042.length - 1; i++) {
+    tl_mwg_042.to(media, {
+      y: '-=' + gap_mwg_042,
+      z: '+=' + gap_mwg_042,
+      ease: 'back.inOut(3)'
+    });
+  }
+
+  tl_mwg_042.to(media, {
+    yPercent: -80,
+    y: '-50vh',
+    scale: 1.2,
+    rotation: (Math.random() - 0.5) * 50,
+    ease: 'power4.in'
+  });
+});
+
+
+  requestAnimationFrame(() => ScrollTrigger.refresh());
+  setTimeout(() => ScrollTrigger.refresh(), 100);
+});
+window.addEventListener('load', () => { if (window.ScrollTrigger) ScrollTrigger.refresh(); });
+
+function wrapLettersInSpan(element) {
+  const text = element.textContent;
+  element.innerHTML = text.split('')
+    .map(c => c === ' ' ? '<span>&nbsp;</span>' : '<span class="letter">' + c + '</span>').join(' ');
+}
+
+function wrapWordsInSpan(element) {
+  const text = element.textContent;
+  element.innerHTML = text
+    .split(' ')
+    .map(word => '<span class="word">' + word + '</span>')
+    .join(' ');
+}
+</script>
+</body></html>

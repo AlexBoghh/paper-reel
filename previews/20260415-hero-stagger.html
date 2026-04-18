@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Motion Tool — Hero scale + stagger from right</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #2a1f0f;
+      --paper: #faf6ec;
+      --paper-soft: #f5f0e6;
+      --line: #e8dfca;
+      --ochre: #c9a079;
+      --cream: #e8dfca;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--paper); color: var(--ink); font-family: 'Inter', sans-serif; }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 48px; background: rgba(250, 246, 236, 0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav .mark { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 600; letter-spacing: 0.04em; }
+    .nav ul { display: flex; list-style: none; gap: 32px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #5a4a2a; }
+
+    .intro {
+      height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 0 24px;
+    }
+    .intro .eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ochre); margin-bottom: 18px; }
+    .intro h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: clamp(44px, 7vw, 96px); line-height: 1.02; font-style: italic; }
+    .intro p { margin-top: 20px; font-size: 14px; color: #5a4a2a; letter-spacing: 0.02em; }
+    .intro .scroll-cue { position: absolute; bottom: 48px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ochre); }
+
+    /* hero-cards scene */
+    .hero-cards { position: relative; }
+    .hero-cards .pin-height { height: 280vh; }
+    .hero-cards .container {
+      height: 100vh; width: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+      padding: 96px 48px 48px 48px; overflow: hidden;
+    }
+    .hero-cards .section-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ochre); margin-bottom: 18px; }
+
+    .hero-cards .hero {
+      position: relative; background: var(--ink); color: var(--paper);
+      width: 100%; height: 62vh;
+      display: flex; align-items: flex-end; padding: 42px;
+      overflow: hidden; will-change: width, height;
+    }
+    .hero-cards .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 40%, rgba(201,160,121,0.24), transparent 55%);
+    }
+    .hero-cards .hero h2 {
+      position: relative;
+      font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-style: italic;
+      font-size: clamp(32px, 5vw, 64px); line-height: 1;
+    }
+
+    .hero-cards .cards {
+      position: relative; display: flex; gap: 24px;
+      margin-top: 36px; width: 100%; max-width: 1080px;
+    }
+    .hero-cards .card {
+      flex: 1; height: 240px; padding: 22px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      will-change: transform, opacity;
+    }
+    .hero-cards .card .num { font-size: 11px; letter-spacing: 0.18em; color: #5a4a2a; }
+    .hero-cards .card .title { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: var(--ink); }
+    .hero-cards .card:nth-child(1) { background: #e8dfca; }
+    .hero-cards .card:nth-child(2) { background: #d8ccad; }
+    .hero-cards .card:nth-child(3) { background: var(--ochre); }
+
+    .after {
+      min-height: 120vh;
+      padding: 120px 48px;
+      display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
+    }
+    .after h3 { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 40px; font-weight: 400; }
+    .after p { font-size: 14px; color: #5a4a2a; max-width: 520px; line-height: 1.6; }
+
+    /* tiny meta tag top-right */
+    .meta {
+      position: fixed; top: 24px; right: 24px; z-index: 20;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+      font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ochre);
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="mark">STUDIO NOREN</div>
+    <ul><li>Work</li><li>About</li><li>Index</li></ul>
+  </nav>
+
+  <div class="meta">
+    <div>paper motion tool</div>
+    <div>mwg_042 &middot; mwg_005</div>
+  </div>
+
+  <section class="intro">
+    <div class="eyebrow">Scroll to play</div>
+    <h1>Making time<br>feel slower.</h1>
+    <p>Hero scales down. Three projects stagger in.</p>
+    <div class="scroll-cue">&darr; scroll</div>
+  </section>
+
+  <section class="hero-cards">
+    <div class="pin-height">
+      <div class="container">
+        <div class="section-label">Selected work &middot; 2024 — 2026</div>
+        <div class="hero">
+          <h2>Making time<br>feel slower.</h2>
+        </div>
+        <div class="cards">
+          <div class="card"><div class="num">01</div><div class="title">Field Journal</div></div>
+          <div class="card"><div class="num">02</div><div class="title">Low Tide</div></div>
+          <div class="card"><div class="num">03</div><div class="title">After Image</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="after">
+    <h3>Let the pin release.</h3>
+    <p>Natural scroll continues past the scene. Everything below this point is back under the user's thumb.</p>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Lenis smooth scroll (optional) — mirrors mwg_042 / mwg_005 source
+    const lenis = new Lenis({ autoRaf: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((t) => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    const scene = document.querySelector('.hero-cards');
+    const hero  = scene.querySelector('.hero');
+    const cards = scene.querySelectorAll('.card');
+    const pin   = scene.querySelector('.pin-height');
+    const container = scene.querySelector('.container');
+
+    // Pin the container for the full scroll distance of pin-height
+    ScrollTrigger.create({
+      trigger: pin,
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: container
+    });
+
+    // Citation 042 — scrub-driven scale of hero via real width/height
+    // (mirrors the per-card scrub in the tutorial, here compressed to one hero element)
+    gsap.fromTo(hero,
+      { width: '100%', height: '62vh' },
+      {
+        width: '60%', height: '37vh',
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: pin,
+          start: 'top top',
+          end: 'top+=70% top',
+          scrub: 0.5
+        }
+      }
+    );
+
+    // Citation 005 — per-card stagger from the right, scrub-driven
+    // Each card gets its own ScrollTrigger with an offset window
+    cards.forEach((card, i) => {
+      gsap.fromTo(card,
+        { xPercent: 140, autoAlpha: 0 },
+        {
+          xPercent: 0, autoAlpha: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: pin,
+            start: 'top+=' + (25 + i * 15) + '% top',
+            end:   'top+=' + (60 + i * 15) + '% top',
+            scrub: 0.6
+          }
+        }
+      );
+    });
+  </script>
+</body>
+</html>

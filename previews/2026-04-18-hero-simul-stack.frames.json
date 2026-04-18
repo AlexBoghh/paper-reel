@@ -1,0 +1,278 @@
+{
+  "samplePoints": [
+    0,
+    14,
+    28,
+    42,
+    57,
+    71,
+    85,
+    100
+  ],
+  "elements": {
+    ".mwg_effect004_r01 .paragraph .word[0]": [
+      {
+        "scrollPct": 0,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[1]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[2]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[3]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[4]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[5]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[6]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 1415
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[7]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 1415
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[8]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 1415
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[9]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 1415
+      }
+    ],
+    ".mwg_effect004_r01 .paragraph .word[10]": [
+      {
+        "scrollPct": 0,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 1415
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 1415
+      }
+    ],
+    ".mwg_effect042_r02 .media[0]": [
+      {
+        "scrollPct": 42,
+        "translateY": 60
+      },
+      {
+        "scrollPct": 57,
+        "translateY": -41.19050134858321
+      },
+      {
+        "scrollPct": 71,
+        "translateY": -30
+      },
+      {
+        "scrollPct": 85,
+        "translateY": -30
+      },
+      {
+        "scrollPct": 100,
+        "translateY": -30
+      }
+    ],
+    ".mwg_effect042_r02 .media[1]": [
+      {
+        "scrollPct": 42,
+        "translateY": 60
+      },
+      {
+        "scrollPct": 57,
+        "translateY": 60
+      },
+      {
+        "scrollPct": 71,
+        "translateY": 15
+      },
+      {
+        "scrollPct": 85,
+        "translateY": -30
+      },
+      {
+        "scrollPct": 100,
+        "translateY": -30
+      }
+    ],
+    ".mwg_effect042_r02 .media[2]": [
+      {
+        "scrollPct": 42,
+        "translateY": 60
+      },
+      {
+        "scrollPct": 57,
+        "translateY": 60
+      },
+      {
+        "scrollPct": 71,
+        "translateY": 60
+      },
+      {
+        "scrollPct": 85,
+        "translateY": 71.19050134858323
+      },
+      {
+        "scrollPct": 100,
+        "translateY": -30
+      }
+    ]
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "samplePoints": [
+    0,
+    14,
+    28,
+    42,
+    57,
+    71,
+    85,
+    100
+  ],
+  "elements": {
+    ".reel-text .paragraph .word[0]": [
+      {
+        "scrollPct": 0,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".reel-text .paragraph .word[1]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".reel-text .paragraph .word[2]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".reel-text .paragraph .word[3]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".reel-text .paragraph .word[4]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".reel-text .paragraph .word[5]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".reel-text .paragraph .word[6]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[7]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[8]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[9]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[10]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[11]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[12]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[13]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[14]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[15]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-text .paragraph .word[16]": [
+      {
+        "scrollPct": 0,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 14,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 28,
+        "translateX": "auto"
+      },
+      {
+        "scrollPct": 42,
+        "translateX": "auto"
+      }
+    ],
+    ".reel-cards .media": [
+      {
+        "scrollPct": 42,
+        "translateY": "autoNaN",
+        "scale": 1
+      },
+      {
+        "scrollPct": 57,
+        "translateY": "autoNaN",
+        "scale": 1.0002313909254914
+      },
+      {
+        "scrollPct": 71,
+        "translateY": "autoNaN",
+        "scale": 1.00625
+      },
+      {
+        "scrollPct": 85,
+        "translateY": "autoNaN",
+        "scale": 1.044795285176369
+      },
+      {
+        "scrollPct": 100,
+        "translateY": "autoNaN",
+        "scale": 1.2
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "samplePoints": [
+    0,
+    14,
+    28,
+    42,
+    57,
+    71,
+    85,
+    100
+  ],
+  "elements": {
+    ".mwg_effect005 .paragraph .word[0]": [
+      {
+        "scrollPct": 0,
+        "translateX": 100
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 0.20576131687242594
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect005 .paragraph .word[1]": [
+      {
+        "scrollPct": 0,
+        "translateX": 100
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 93.4156378600823
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 0
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect005 .paragraph .word[2]": [
+      {
+        "scrollPct": 0,
+        "translateX": 100
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 100
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 6.584362139917673
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect005 .paragraph .word[3]": [
+      {
+        "scrollPct": 0,
+        "translateX": 100
+      },
+      {
+        "scrollPct": 14,
+        "translateX": 100
+      },
+      {
+        "scrollPct": 28,
+        "translateX": 99.79423868312757
+      },
+      {
+        "scrollPct": 42,
+        "translateX": 0
+      }
+    ],
+    ".mwg_effect042 .media": [
+      {
+        "scrollPct": 42,
+        "translateY": 0
+      },
+      {
+        "scrollPct": 57,
+        "translateY": 3.736315552093157
+      },
+      {
+        "scrollPct": 71,
+        "translateY": -15
+      },
+      {
+        "scrollPct": 85,
+        "translateY": -33.73631555209316
+      },
+      {
+        "scrollPct": 100,
+        "translateY": -30
+      }
+    ]
+  }
+}

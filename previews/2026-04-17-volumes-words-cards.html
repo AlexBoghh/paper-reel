@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>VOLUMES IN MOTION. — preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+* { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+html, body { background:#f5e6d3; color:#1a1a1a; font:500 16px/1.4 'Inter', sans-serif; }
+
+/* HERO (mwg_004 — simultaneous words) */
+.hero { position:relative; }
+.hero .pin-height { height: 500vh; }
+.hero .container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 64px;
+  overflow: hidden;
+  background: #f5e6d3;
+}
+.hero .header {
+  position: absolute;
+  top: 32px; left: 64px; right: 64px;
+  display: flex;
+  justify-content: space-between;
+  font: 500 12px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b6155;
+}
+.hero .footer {
+  position: absolute;
+  bottom: 32px; left: 64px; right: 64px;
+  display: flex;
+  justify-content: space-between;
+  font: 500 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b6155;
+}
+.hero .paragraph {
+  width: 100%;
+  font: 700 7vw/0.95 'Inter', sans-serif;
+  letter-spacing: -0.03em;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+.hero .word {
+  display: inline-block;
+  transform: translate(calc(100vw - 64px), 0);
+}
+
+/* CARD STACK (mwg_042 — smooth stacking) */
+.cards { position:relative; background:#f5e6d3; }
+.cards .pin-height { height: 500vh; }
+.cards .container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5e6d3;
+}
+.cards .text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  padding: 0 64px;
+  display: flex;
+  justify-content: space-between;
+  font: 500 14px/1.3 'JetBrains Mono', monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b6155;
+  transform: translate(0, -50%);
+  pointer-events:none;
+}
+.cards .medias {
+  width: 22%;
+  aspect-ratio: 0.75;
+  perspective: 25vw;
+  position: relative;
+}
+.cards .media {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #f5e6d3;
+  box-shadow: 0 24px 60px rgba(10,10,10,0.18), 0 4px 12px rgba(10,10,10,0.10);
+}
+.cards .media .num {
+  font: 700 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.22em;
+  margin-bottom: 6px;
+}
+.cards .media .title {
+  font: 700 22px/1.05 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+.cards .m1 { background: linear-gradient(135deg, #d8c4a0 0%, #b89d6a 100%); color:#1a1a1a; }
+.cards .m2 { background: linear-gradient(135deg, #2a3845 0%, #16202a 100%); color:#f5e6d3; }
+.cards .m3 { background: linear-gradient(135deg, #c47554 0%, #8e4a30 100%); color:#f5e6d3; }
+</style>
+</head>
+<body>
+
+  <!-- HERO — simultaneous words (mwg_004) -->
+  <section class="hero mwg_effect004">
+    <div class="pin-height">
+      <div class="container">
+        <div class="header">
+          <span>Volumes — A Series</span>
+          <span>04 / 2026</span>
+        </div>
+        <p class="paragraph">VOLUMES IN MOTION.</p>
+        <div class="footer">
+          <span>By Alex Bogdan</span>
+          <span>Pin · Hero / 500vh</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARD STACK — smooth stacking (mwg_042) -->
+  <section class="cards mwg_effect042">
+    <div class="pin-height">
+      <div class="container">
+        <div class="text">
+          <span>Three landscapes</span>
+          <span>Photographed by Mo Eid</span>
+        </div>
+        <div class="medias">
+          <div class="media m1"><div class="num">01</div><div class="title">Marfa, TX</div></div>
+          <div class="media m2"><div class="num">02</div><div class="title">Tasmania</div></div>
+          <div class="media m3"><div class="num">03</div><div class="title">Atacama</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- LENIS SMOOTH SCROLL (OPTIONAL) -->
+  <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+
+  <!-- EFFECT CODE -->
+  <script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const lenis = new Lenis({ autoRaf: true });
+    document.fonts.ready.then(() => {
+      initHero();
+      initCards();
+    });
+  });
+
+  function initHero() {
+    const root = document.querySelector('.mwg_effect004');
+    const pinHeight = root.querySelector('.pin-height');
+    const container = root.querySelector('.container');
+    const paragraph = root.querySelector('.paragraph');
+    wrapWordsInSpan(paragraph);
+
+    const words = paragraph.querySelectorAll('.word');
+
+    ScrollTrigger.create({
+      trigger: pinHeight,
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: container
+    });
+
+    const lines = [[]];
+    let lineIndex = 0;
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i];
+      const offsetTop = word.offsetTop;
+      if (i > 0 && offsetTop !== words[i - 1].offsetTop) {
+        lines.push([]);
+        lineIndex++;
+      }
+      lines[lineIndex].push(word);
+    }
+
+    lines.forEach(lineWords => {
+      gsap.to(lineWords, {
+        x: 0,
+        stagger: 0.2,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: root,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      });
+    });
+  }
+
+  function initCards() {
+    const root = document.querySelector('.mwg_effect042');
+    const pinHeight = root.querySelector('.pin-height');
+    const container = root.querySelector('.container');
+
+    ScrollTrigger.create({
+      trigger: pinHeight,
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: container
+    });
+
+    const gap = 30;
+    const medias = root.querySelectorAll('.media');
+    const distPerMedia = (pinHeight.clientHeight - window.innerHeight) / medias.length;
+
+    gsap.set(medias, {
+      y: gap * (medias.length - 1),
+      z: -gap * (medias.length - 1)
+    });
+
+    medias.forEach((media, index) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: pinHeight,
+          start: 'top top+=' + (distPerMedia * index),
+          end: 'bottom bottom+=' + (distPerMedia * index),
+          scrub: 0.5
+        }
+      });
+
+      for (let i = 0; i < medias.length - 1; i++) {
+        tl.to(media, {
+          y: '-=' + gap,
+          z: '+=' + gap,
+          ease: 'back.inOut(3)'
+        });
+      }
+
+      tl.to(media, {
+        yPercent: -80,
+        y: '-50vh',
+        scale: 1.2,
+        rotation: (Math.random() - 0.5) * 50,
+        ease: 'power4.in'
+      });
+    });
+  }
+
+  // Split a text node's words into <span class="word"> children using safe DOM ops.
+  function wrapWordsInSpan(element) {
+    const text = element.textContent;
+    const tokens = text.split(' ');
+    while (element.firstChild) element.removeChild(element.firstChild);
+    tokens.forEach((token, i) => {
+      const span = document.createElement('span');
+      span.className = 'word';
+      span.textContent = token;
+      element.appendChild(span);
+      if (i < tokens.length - 1) element.appendChild(document.createTextNode(' '));
+    });
+  }
+  </script>
+</body>
+</html>

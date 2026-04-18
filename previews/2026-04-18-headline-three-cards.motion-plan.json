@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "timestamp": "2026-04-18-headline-three-cards",
+  "parent": null,
+  "viewport": { "w": 1440, "h": 900 },
+  "duration": 100,
+  "citations": [
+    {
+      "recipeId": "mwg_004",
+      "role": "PRIMARY",
+      "category": "TEXT",
+      "opts": {
+        "rootSelector": ".reel-text",
+        "pinHeightSelector": ".reel-text .pin-height",
+        "containerSelector": ".reel-text .container",
+        "paragraphSelector": ".reel-text .paragraph",
+        "staggerEach": 0.2
+      }
+    },
+    {
+      "recipeId": "mwg_042",
+      "role": "SECONDARY",
+      "category": "CARD SCROLL",
+      "opts": {
+        "rootSelector": ".reel-cards",
+        "pinHeightSelector": ".reel-cards .pin-height",
+        "containerSelector": ".reel-cards .container",
+        "mediaSelector": ".reel-cards .media",
+        "gap": 30
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "words-in",
+      "recipeId": "mwg_004",
+      "scrollRange": [0, 42],
+      "primitives": [
+        {
+          "kind": "translateX",
+          "selector": ".reel-text .paragraph .word",
+          "from": "auto",
+          "to": 0,
+          "ease": "power1.inOut",
+          "stagger": { "count": 17, "amount": 0.2 }
+        }
+      ]
+    },
+    {
+      "id": "stack-advance",
+      "recipeId": "mwg_042",
+      "scrollRange": [42, 100],
+      "primitives": [
+        {
+          "kind": "translateY",
+          "selector": ".reel-cards .media",
+          "from": "auto",
+          "to": -30,
+          "ease": "back.inOut(3)"
+        },
+        {
+          "kind": "scale",
+          "selector": ".reel-cards .media",
+          "from": 1,
+          "to": 1.2,
+          "ease": "power4.in"
+        }
+      ]
+    }
+  ],
+  "params": {
+    "mwg_004": {
+      "pin": true,
+      "scrub": true,
+      "ease": "power1.inOut",
+      "stagger": 0.2,
+      "start": "top top",
+      "end": "bottom bottom"
+    },
+    "mwg_042": {
+      "pin": true,
+      "scrub": 0.5,
+      "ease": "back.inOut(3)",
+      "start": "top top",
+      "end": "bottom bottom"
+    }
+  },
+  "content": {
+    "mwg_004": {
+      "headline": "In Marfa the light is straight. In Fogo the wind is fixed. In the Karoo the silence is old."
+    },
+    "mwg_042": {
+      "cards": [
+        { "label": "Marfa, TX" },
+        { "label": "Fogo Island" },
+        { "label": "Karoo Desert" }
+      ]
+    }
+  },
+  "captions": [
+    "Pinned hero. Words held off-viewport right.",
+    "Line 1 slides in. 'In Marfa the light…' seats.",
+    "Line 2 picks up. 'In Fogo the wind…' closing stack.",
+    "Paragraph has seated. Scene 1 hands off.",
+    "Deck pinned. Card 01 (Marfa) lifts off.",
+    "Card 02 (Fogo) rides forward, gaining depth.",
+    "Card 03 (Karoo) reveals. Stack settles close.",
+    "Final card exits with rotation and scale."
+  ]
+}

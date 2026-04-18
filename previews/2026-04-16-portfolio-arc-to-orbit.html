@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Selected Work 2019 — 2026 · Alex Bogdan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet" />
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html, body { background: #0e0e0e; color: #f3ecde; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* HUD — fixed top overlay (like the storyboard header strip) */
+.hud {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 22px 32px;
+  z-index: 100;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  color: #f3ecde;
+}
+.hud .hud-left   { color: rgba(243,236,222,0.7); }
+.hud .hud-mid    { color: rgba(243,236,222,0.45); text-align: center; }
+.hud .hud-right  { color: #f97316; text-align: right; font-weight: 700; }
+
+/* INTRO — hero title */
+section.intro {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8vw;
+  position: relative;
+}
+.intro h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(56px, 11vw, 160px);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+.intro em {
+  font-style: italic;
+  color: #f97316;
+  font-weight: 400;
+}
+.intro .kicker {
+  position: absolute;
+  top: 120px;
+  left: 8vw;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(243,236,222,0.5);
+}
+.intro .scroll-cue {
+  position: absolute;
+  bottom: 48px;
+  left: 8vw;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(243,236,222,0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.intro .scroll-cue::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: #f97316;
+}
+
+/* STAGE — pinned motion section */
+section.stage-section {
+  height: 1200vh;
+  position: relative;
+}
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #0e0e0e;
+}
+.stage::before,
+.stage::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: rgba(245,230,211,0.08);
+  z-index: 5;
+}
+.stage::before { top: 80px; }
+.stage::after  { bottom: 80px; }
+
+.stage .caption {
+  position: absolute;
+  top: 42px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(243,236,222,0.55);
+  z-index: 10;
+}
+.stage .footline {
+  position: absolute;
+  bottom: 42px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(243,236,222,0.4);
+  letter-spacing: 0.02em;
+  z-index: 10;
+}
+
+/* ARC LAYER — phase A: tiles ride an arc across the upper viewport */
+.arc-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+.arc-layer.faded { opacity: 0; }
+
+.container {
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  width: 300vw;
+  height: 100vh;
+  will-change: transform;
+}
+.circle {
+  width: 300%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 18%;
+  left: -100%;
+  will-change: transform;
+}
+
+/* ORBIT LAYER — phase B: visible ring carousel */
+.orbit-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  pointer-events: none;
+}
+.orbit-layer.active { opacity: 1; }
+
+.ring {
+  position: relative;
+  width: 560px;
+  height: 560px;
+  will-change: transform;
+}
+.ring-pos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 200px;
+  margin-left: -75px;
+  margin-top: -100px;
+  will-change: transform;
+}
+.ring-pos[data-i="0"] { transform: rotate(-90deg) translate(225px) rotate(90deg); }
+.ring-pos[data-i="1"] { transform: rotate(-45deg) translate(225px) rotate(45deg); }
+.ring-pos[data-i="2"] { transform: rotate(0deg)   translate(225px) rotate(0deg); }
+.ring-pos[data-i="3"] { transform: rotate(45deg)  translate(225px) rotate(-45deg); }
+.ring-pos[data-i="4"] { transform: rotate(90deg)  translate(225px) rotate(-90deg); }
+.ring-pos[data-i="5"] { transform: rotate(135deg) translate(225px) rotate(-135deg); }
+.ring-pos[data-i="6"] { transform: rotate(180deg) translate(225px) rotate(-180deg); }
+.ring-pos[data-i="7"] { transform: rotate(225deg) translate(225px) rotate(-225deg); }
+.ring-pos .tile {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  left: 0;
+  top: 0;
+}
+.ring-center-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background: #f97316;
+  opacity: 0.6;
+}
+.tile {
+  width: 15vw;
+  aspect-ratio: 0.76;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border: 1px solid rgba(245,230,211,0.18);
+  overflow: hidden;
+  will-change: transform;
+}
+.tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 80% at 80% 0%, rgba(245,230,211,0.18), transparent 60%);
+  pointer-events: none;
+}
+.tile .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: #0e0e0e;
+}
+.tile .label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tile .title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.05;
+  color: #0e0e0e;
+}
+.tile .meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(14,14,14,0.55);
+}
+
+.tile-01 { background: linear-gradient(135deg, #c9a079, #8c6f52); }
+.tile-02 { background: linear-gradient(135deg, #a38566, #5a4630); }
+.tile-03 { background: linear-gradient(135deg, #b08c6b, #6f563d); }
+.tile-04 { background: linear-gradient(135deg, #96784e, #533b28); }
+.tile-05 { background: linear-gradient(135deg, #7d6648, #4a3825); }
+.tile-06 { background: linear-gradient(135deg, #c9a079, #7a5d40); }
+.tile-07 { background: linear-gradient(135deg, #8c6f52, #a38566); }
+.tile-08 { background: linear-gradient(135deg, #6f563d, #c9a079); }
+
+/* OUTRO — pause after motion */
+section.outro {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10vw;
+  position: relative;
+}
+.outro p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(22px, 3.5vw, 44px);
+  color: rgba(243,236,222,0.55);
+  text-align: center;
+  max-width: 780px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.outro p em { color: #f97316; }
+.outro .colophon {
+  position: absolute;
+  bottom: 48px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(243,236,222,0.3);
+}
+</style>
+</head>
+<body>
+
+<div class="hud">
+  <div class="hud-left">Selected Work · 2019 — 2026 · Alex Bogdan</div>
+  <div class="hud-mid" id="phase-label">Scroll · Phase A · Arc</div>
+  <div class="hud-right" id="counter">001 / 008</div>
+</div>
+
+<section class="intro">
+  <div class="kicker">R01 · Portfolio Index · Reel 2026.04</div>
+  <h1>Selected Work<br/><em>2019 — 2026</em></h1>
+  <div class="scroll-cue">Scroll to enter</div>
+</section>
+
+<section class="stage-section">
+  <div class="stage">
+    <div class="caption" id="stage-caption">Eight projects · one curved trajectory</div>
+
+    <!-- PHASE A — arc layer -->
+    <div class="arc-layer" id="arc-layer">
+      <div class="container">
+        <div class="circle"><div class="tile tile-01"><span class="num">01</span><div class="label"><span class="title">Winter Gardens</span><span class="meta">2019 · Identity</span></div></div></div>
+        <div class="circle"><div class="tile tile-02"><span class="num">02</span><div class="label"><span class="title">Marginalia</span><span class="meta">2020 · Editorial</span></div></div></div>
+        <div class="circle"><div class="tile tile-03"><span class="num">03</span><div class="label"><span class="title">Late Return</span><span class="meta">2021 · Film</span></div></div></div>
+        <div class="circle"><div class="tile tile-04"><span class="num">04</span><div class="label"><span class="title">Cold Storage</span><span class="meta">2022 · Interface</span></div></div></div>
+        <div class="circle"><div class="tile tile-05"><span class="num">05</span><div class="label"><span class="title">Blue Hour</span><span class="meta">2023 · Campaign</span></div></div></div>
+        <div class="circle"><div class="tile tile-06"><span class="num">06</span><div class="label"><span class="title">Northing</span><span class="meta">2024 · Motion</span></div></div></div>
+        <div class="circle"><div class="tile tile-07"><span class="num">07</span><div class="label"><span class="title">Ember Room</span><span class="meta">2025 · Installation</span></div></div></div>
+        <div class="circle"><div class="tile tile-08"><span class="num">08</span><div class="label"><span class="title">Field Note</span><span class="meta">2026 · In progress</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- PHASE B — visible orbit ring -->
+    <div class="orbit-layer" id="orbit-layer">
+      <div class="ring" id="ring">
+        <div class="ring-center-dot"></div>
+        <div class="ring-pos" data-i="0"><div class="tile tile-01"><span class="num">01</span><div class="label"><span class="title">Winter Gardens</span><span class="meta">2019 · Identity</span></div></div></div>
+        <div class="ring-pos" data-i="1"><div class="tile tile-02"><span class="num">02</span><div class="label"><span class="title">Marginalia</span><span class="meta">2020 · Editorial</span></div></div></div>
+        <div class="ring-pos" data-i="2"><div class="tile tile-03"><span class="num">03</span><div class="label"><span class="title">Late Return</span><span class="meta">2021 · Film</span></div></div></div>
+        <div class="ring-pos" data-i="3"><div class="tile tile-04"><span class="num">04</span><div class="label"><span class="title">Cold Storage</span><span class="meta">2022 · Interface</span></div></div></div>
+        <div class="ring-pos" data-i="4"><div class="tile tile-05"><span class="num">05</span><div class="label"><span class="title">Blue Hour</span><span class="meta">2023 · Campaign</span></div></div></div>
+        <div class="ring-pos" data-i="5"><div class="tile tile-06"><span class="num">06</span><div class="label"><span class="title">Northing</span><span class="meta">2024 · Motion</span></div></div></div>
+        <div class="ring-pos" data-i="6"><div class="tile tile-07"><span class="num">07</span><div class="label"><span class="title">Ember Room</span><span class="meta">2025 · Installation</span></div></div></div>
+        <div class="ring-pos" data-i="7"><div class="tile tile-08"><span class="num">08</span><div class="label"><span class="title">Field Note</span><span class="meta">2026 · In progress</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="footline" id="stage-footline">Rotation scrubs with your scroll — each project rides the arc.</div>
+  </div>
+</section>
+
+<section class="outro">
+  <p>Scroll. The archive <em>loops forever</em>.</p>
+  <div class="colophon">R01 · End of Reel · GSAP · ScrollTrigger · Lenis</div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const lenis = new Lenis({ autoRaf: true });
+  lenis.on('scroll', ScrollTrigger.update);
+
+  const stage       = document.querySelector('.stage');
+  const arcLayer    = document.getElementById('arc-layer');
+  const orbitLayer  = document.getElementById('orbit-layer');
+  const ringEl      = document.getElementById('ring');
+  const ringTiles   = gsap.utils.toArray('#ring .tile');
+  const circles     = gsap.utils.toArray('.arc-layer .circle');
+  const counter     = document.getElementById('counter');
+  const phaseLbl    = document.getElementById('phase-label');
+  const stageCap    = document.getElementById('stage-caption');
+  const stageFoot   = document.getElementById('stage-footline');
+
+  let orbitActive = false;
+
+  // Pin the stage through the whole stage-section scroll
+  ScrollTrigger.create({
+    trigger: '.stage-section',
+    start: 'top top',
+    end: 'bottom bottom',
+    pin: '.stage',
+  });
+
+  // PHASE A — arc: each circle's rotation scrubs from +30° to -30°, staggered
+  gsap.fromTo(circles, { rotation: 30 }, {
+    rotation: -30,
+    ease: 'power2.inOut',
+    stagger: 0.06,
+    scrollTrigger: {
+      trigger: '.stage-section',
+      start: 'top top',
+      end: '75% bottom',
+      scrub: 1,
+    }
+  });
+
+  // Counter updates through Phase A
+  ScrollTrigger.create({
+    trigger: '.stage-section',
+    start: 'top top',
+    end: '75% bottom',
+    onUpdate: (self) => {
+      if (orbitActive) return;
+      const count = Math.max(1, Math.min(8, Math.floor(self.progress * 8) + 1));
+      counter.textContent = String(count).padStart(3, '0') + ' / 008';
+    }
+  });
+
+  // PHASE B — visible orbit ring (crossfade from arc layer, wheel-driven rotation)
+  const ringState = { rot: 0 };
+  let targetRot = 0;
+  function applyRing(v) {
+    ringEl.style.transform = `rotate(${v}deg)`;
+    // counter-rotate each tile so text stays upright
+    const counterRot = `rotate(${-v}deg)`;
+    ringTiles.forEach((t) => { t.style.transform = counterRot; });
+  }
+  applyRing(0);
+
+  ScrollTrigger.create({
+    trigger: '.stage-section',
+    start: '75% bottom',
+    end: 'bottom bottom',
+    onEnter: () => {
+      orbitActive = true;
+      counter.textContent = '∞ / ∞';
+      phaseLbl.textContent = 'Orbit · Archive Loops';
+      stageCap.textContent = 'Archive · infinite loop';
+      stageFoot.textContent = 'Keep scrolling — the reel spins with your velocity.';
+      arcLayer.classList.add('faded');
+      orbitLayer.classList.add('active');
+      // Gentle baseline spin so the ring is obviously in motion even without wheel input
+      gsap.to(ringState, {
+        rot: '+=360',
+        duration: 18,
+        ease: 'none',
+        repeat: -1,
+        onUpdate: () => applyRing(ringState.rot),
+      });
+    },
+    onLeaveBack: () => {
+      orbitActive = false;
+      counter.textContent = '006 / 008';
+      phaseLbl.textContent = 'Scroll · Phase A · Arc';
+      stageCap.textContent = 'Eight projects · one curved trajectory';
+      stageFoot.textContent = 'Rotation scrubs with your scroll — each project rides the arc.';
+      arcLayer.classList.remove('faded');
+      orbitLayer.classList.remove('active');
+      gsap.killTweensOf(ringState);
+      ringState.rot = 0;
+      targetRot = 0;
+      applyRing(0);
+    }
+  });
+
+  // Wheel-driven ring rotation — adds on top of the baseline spin
+  window.addEventListener('wheel', (e) => {
+    if (!orbitActive) return;
+    targetRot -= e.deltaY / 30;
+    gsap.killTweensOf(ringState);
+    gsap.to(ringState, {
+      rot: targetRot,
+      duration: 1.4,
+      ease: 'power3.out',
+      onUpdate: () => applyRing(ringState.rot),
+      onComplete: () => {
+        // after user stops, resume gentle baseline spin from current position
+        gsap.to(ringState, {
+          rot: '+=360',
+          duration: 40,
+          ease: 'none',
+          repeat: -1,
+          onUpdate: () => applyRing(ringState.rot),
+        });
+      },
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>

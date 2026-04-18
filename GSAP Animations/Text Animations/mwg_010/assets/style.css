@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+/* NORMALIZE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* NORMALIZE */
+
+body {
+    background: #121212;
+    color: #F1F1F1;
+    font: 500 normal 22px/1.3 'Inter', sans-serif;
+}
+.mwg_effect010 {
+    overflow: hidden;
+}
+.mwg_effect010 .scroll{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.mwg_effect010 .container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    position: relative;
+}
+.mwg_effect010 .header {
+    position: absolute;
+    width: 100%;
+    white-space: initial;
+    top: 0;
+    left: 0;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.mwg_effect010 .header .left {
+    font-size: 1.2vw;
+    width: 25vw;
+}
+.mwg_effect010 .header .right {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+.mwg_effect010 .header .right p {
+    font: 500 normal 0.9vw / normal 'IBM Plex Mono';
+    text-transform: uppercase;
+    text-align: right;
+}
+.mwg_effect010 .header .right img {
+    width: 4.4vw;
+    height: auto;
+}
+.mwg_effect010 .text {
+    display: flex;
+    font: 500 normal 12vw/0.9 'Inter', sans-serif;
+    padding: 0 100vw;
+    white-space: nowrap;
+    width: max-content;
+}
+.mwg_effect010 .container span:not(.letter) {
+    padding: 0 2vw;
+}
+.mwg_effect010 .letter {
+    display: inline-block;
+    visibility: hidden;
+    padding: 0 0.2vw;
+}
+
+@media (max-width: 768px) {
+    .mwg_effect010 .header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    .mwg_effect010 .header .left { 
+        order: 2;
+        font-size: 16px;
+        width: 100%;
+    }
+    .mwg_effect010 .header .right {
+        gap: 15px;
+    }
+    .mwg_effect010 .header .right p {
+        order: 2;
+        font-size: 13px;
+        text-align: left;
+    }
+    .mwg_effect010 .header .right img {
+        width: 62px;
+        height: auto;
+    }
+    .mwg_effect010 .text {
+        font-size: 100px;
+    }
+}

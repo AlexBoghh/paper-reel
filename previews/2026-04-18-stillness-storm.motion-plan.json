@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "timestamp": "2026-04-18-stillness-storm",
+  "parent": null,
+  "viewport": { "w": 1440, "h": 900 },
+  "duration": 100,
+  "citations": [
+    {
+      "recipeId": "mwg_005",
+      "role": "PRIMARY",
+      "category": "TEXT",
+      "opts": {
+        "rootSelector": ".mwg_effect005",
+        "pinHeightSelector": ".mwg_effect005 .pin-height",
+        "containerSelector": ".mwg_effect005 .container",
+        "paragraphSelector": ".mwg_effect005 .paragraph",
+        "staggerEach": 0.02
+      }
+    },
+    {
+      "recipeId": "mwg_042",
+      "role": "SECONDARY",
+      "category": "CARD SCROLL",
+      "opts": {
+        "rootSelector": ".mwg_effect042",
+        "pinHeightSelector": ".mwg_effect042 .pin-height",
+        "containerSelector": ".mwg_effect042 .container",
+        "mediaSelector": ".mwg_effect042 .media",
+        "gap": 30
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "headline-words",
+      "recipeId": "mwg_005",
+      "scrollRange": [0, 42],
+      "primitives": [
+        {
+          "kind": "translateX",
+          "selector": ".mwg_effect005 .paragraph .word",
+          "from": 100,
+          "to": 0,
+          "ease": "power4.inOut",
+          "stagger": { "count": 4, "amount": 0.2 }
+        }
+      ]
+    },
+    {
+      "id": "plates-stack",
+      "recipeId": "mwg_042",
+      "scrollRange": [42, 100],
+      "primitives": [
+        {
+          "kind": "translateY",
+          "selector": ".mwg_effect042 .media",
+          "from": 0,
+          "to": -30,
+          "ease": "back.inOut(3)"
+        }
+      ]
+    }
+  ],
+  "params": {
+    "mwg_005": {
+      "pin": true,
+      "scrub": true,
+      "ease": "power4.inOut",
+      "stagger": 0.02,
+      "start": "top top",
+      "end": "bottom bottom"
+    },
+    "mwg_042": {
+      "pin": true,
+      "scrub": 0.5,
+      "ease": "back.inOut(3)",
+      "start": "top top",
+      "end": "bottom bottom"
+    }
+  },
+  "captions": [
+    "Pinned · headline not yet composed",
+    "Word I · \"Stillness,\"",
+    "Word II · \"after\"",
+    "All four words · scene handoff",
+    "Plate I · Hvar revealing",
+    "Plate II · Lisbon balcony",
+    "Plate III · Reykjavík",
+    "Deck at rest · three plates stacked"
+  ],
+  "content": {
+    "mwg_005": {
+      "headline": "Stillness, after the storm"
+    },
+    "mwg_042": {
+      "cards": [
+        { "label": "PLATE I · LOW TIDE, HVAR", "image": "https://picsum.photos/id/1015/1600/1067" },
+        { "label": "PLATE II · AFTERNOON, LISBON BALCONY", "image": "https://picsum.photos/id/1018/1600/1067" },
+        { "label": "PLATE III · COLD MORNING, REYKJAVÍK", "image": "https://picsum.photos/id/1039/1600/1067" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+/* NORMALIZE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* NORMALIZE */
+
+body {
+    background: #121212;
+    color: #F1F1F1;
+    font: 500 normal 3vw/0.9 'Inter', sans-serif;
+}
+.mwg_effect006 {
+    letter-spacing: -0.03em;
+    overflow: hidden;
+}
+.mwg_effect006 .pin-height {
+    height: 400vh;
+}
+.mwg_effect006 .container {
+    height: 100vh;
+    align-items: center;
+    padding: 0 3vw;
+    column-gap: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.mwg_effect006 .container .name {
+    position: absolute;
+    top: 15vh;
+    left: calc(2 * 15px);
+}
+.mwg_effect006 .container .left {
+    position: relative;
+    padding: 0 0 0 15px;
+    width: 40%;
+}
+.mwg_effect006 .container .right {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+.mwg_effect006 .paragraph:not(:first-child) {
+    position: absolute;
+    top: 0;
+}
+.mwg_effect006 .word {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin: -0.14em 0; /* depends on the font */
+}
+.mwg_effect006 .word span {
+    display: block;
+    padding: 0.14em 0; /* depends on the font */
+}
+.mwg_effect006 .paragraph:not(:first-child) .word span {
+    transform: translate(0, -100%);
+}
+
+@media (max-width: 500px) {
+    .mwg_effect006 {font-size: 30px;}
+    .mwg_effect006 .container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .mwg_effect006 .container .left {
+        order: 2;
+        width: 100%;
+        padding: 0;
+        margin: 15px 0 0 0;
+    }
+    .mwg_effect006 .container .right {
+        order: 1;
+        width: 100%;
+        max-width: initial;
+        height: auto;
+        max-height: 55%;
+    }
+    .mwg_effect006 .container .name {
+        top: auto;
+        bottom: 20px;
+        left: 15px;
+    }
+}

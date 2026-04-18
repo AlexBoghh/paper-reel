@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap');
+
+/* NORMALIZE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* NORMALIZE */
+
+body {
+    background: #121212;
+    color: #F1F1F1;
+    font: 500 normal 22px/1.3 'Inter', sans-serif;
+}
+.mwg_effect003 .header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font: 500 normal clamp(12px, 0.9vw, 100px) / normal 'IBM Plex Mono';
+    text-transform: uppercase;
+    padding: 25px;
+}
+.mwg_effect003 .header > * {
+    flex: 1;
+}
+.mwg_effect003 .header > *:nth-child(2) {
+    text-align: center;
+}
+.mwg_effect003 .header > *:nth-child(3) {
+    text-align: right;
+}
+.mwg_effect003 {
+    position: relative;
+    overflow: hidden;
+}
+.mwg_effect003 .scroll {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.mwg_effect003 .pin-height {
+    height: 500vh;
+}
+.mwg_effect003 .container {
+    position: relative;
+    height: 100vh;
+}
+.mwg_effect003 .circles {
+    height: 100%;
+}
+.mwg_effect003 .circle {
+    width: 250vw;
+    height: 250vw;
+    border-radius: 100%;
+    position: absolute;
+    top :50%;
+    left: 50%;
+    transform: translate(-50%,0);
+    will-change: transform;
+}
+.mwg_effect003 .card {
+    width: 25vw;
+    aspect-ratio: 0.75;
+    border-radius: 0.7vw;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform:translate(-50%,55vh);
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1vw;
+}
+.mwg_effect003 .card p {
+    font-size: 1vw;
+    line-height: 0.94;
+}
+.mwg_effect003 .card .aka {
+    display: inline-block;
+    font-size: 0.85vw;
+    border: 0.15em solid currentColor;
+    border-radius: 100%;
+    padding: 0.30em 1em 0.15em;
+    margin: 0 0 1em;
+}
+.mwg_effect003 .card .top p {
+    display: flex;
+    justify-content: space-between;
+}
+.mwg_effect003 .card h2 {
+    font: 800 normal 4.6vw / 0.8 'Inter', sans-serif;
+    letter-spacing: -0.03em;
+}
+.mwg_effect003 .circle:nth-child(1) .card {
+    background-color: #FC4C3B;
+    color: #702626;
+}
+.mwg_effect003 .circle:nth-child(2) .card {
+    background-color: #FF8308;
+    color: #FFDF40;
+}
+.mwg_effect003 .circle:nth-child(3) .card {
+    background-color: #DEDA8D;
+    color: #3D4331;
+}
+.mwg_effect003 .circle:nth-child(4) .card {
+    background-color: #71CFA3;
+    color: #184739;
+}
+.mwg_effect003 .circle:nth-child(5) .card {
+    background-color: #C4EF7A;
+    color: #184739;
+}
+.mwg_effect003 .circle:nth-child(6) .card {
+    background-color: #BCEFFF;
+    color: #0C3FD3;
+}
+
+@media (max-width: 900px) {
+    .mwg_effect003 .header {
+        flex-direction: column;
+    }
+    .mwg_effect003 .circles {
+        height: 100%;
+        transform: scale(1.6, 1.6);
+    }
+}

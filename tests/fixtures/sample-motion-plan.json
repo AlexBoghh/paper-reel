@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "timestamp": "2026-04-17-test",
+  "parent": null,
+  "viewport": { "w": 1440, "h": 900 },
+  "duration": 100,
+  "citations": [
+    { "recipeId": "mwg_010", "role": "PRIMARY", "category": "TEXT", "opts": {} }
+  ],
+  "timeline": [
+    {
+      "id": "marquee",
+      "recipeId": "mwg_010",
+      "scrollRange": [0, 100],
+      "primitives": [
+        { "kind": "translateX", "selector": ".text", "from": 0, "to": -1000, "ease": "none" }
+      ]
+    }
+  ],
+  "params": { "mwg_010": { "pin": true, "scrub": true, "ease": "none" } },
+  "captions": ["a", "b", "c", "d", "e", "f", "g", "h"]
+}

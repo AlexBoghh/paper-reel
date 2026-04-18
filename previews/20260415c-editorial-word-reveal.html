@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1440, initial-scale=1" />
+<title>Quiet willow — editorial word reveal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@500;600;700&family=Georgia&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #f5e6d3; color: #0a0a0a; font-family: Georgia, serif; -webkit-font-smoothing: antialiased; }
+  body { overflow-x: hidden; }
+
+  .pin-height { position: relative; width: 100%; height: 300vh; }
+  .container { position: relative; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 88px 128px; background: #f5e6d3; color: #0a0a0a; }
+
+  .topbar { display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; }
+  .topbar .tag-right { color: #8a6a3a; }
+
+  .headline-wrap { display: flex; flex-direction: column; gap: 8px; }
+  .headline { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 168px; line-height: 0.92; letter-spacing: -0.025em; color: #0a0a0a; }
+  .headline .line-2 { padding-left: 220px; font-style: italic; }
+  .headline .word { display: inline-block; overflow: hidden; }
+  .headline .word .word-inner { display: inline-block; }
+
+  .lower { display: flex; flex-direction: column; gap: 28px; max-width: 720px; }
+  .body-paragraph { font-family: Georgia, serif; font-size: 24px; font-style: italic; line-height: 1.55; color: #0a0a0a; }
+  .byline { display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; }
+  .byline { max-width: none; }
+
+  .scroll-hint { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(10, 10, 10, 0.55); }
+</style>
+</head>
+<body>
+
+  <div class="mwg_effect005 pin-height">
+    <div class="container">
+
+      <div class="topbar">
+        <div>Issue N°74 — Spring 2026</div>
+        <div class="tag-right">Poetry / Cover Story</div>
+      </div>
+
+      <div class="headline-wrap">
+        <div class="headline line-1"><span class="word"><span class="word-inner">Quiet</span></span> <span class="word"><span class="word-inner">willow</span></span></div>
+        <div class="headline line-2"><span class="word"><span class="word-inner">at</span></span> <span class="word"><span class="word-inner">dusk</span></span> <span class="word"><span class="word-inner">whispers</span></span></div>
+      </div>
+
+      <div class="lower">
+        <p class="body-paragraph">On the evening the storm broke over the orchard, the garden held its breath as though waiting to hear what the old willow had been rehearsing, alone, for fifty Octobers.</p>
+        <div class="byline">
+          <div>— Alex Bogdan / Field Notes</div>
+          <div>Pg. 006</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-hint scroll">Scroll to play — Quiet willow</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Optional Lenis smooth scroll — capture_gif.py stubs this route.
+    if (window.Lenis) {
+      const lenis = new Lenis({ autoRaf: true });
+      lenis.on('scroll', ScrollTrigger.update);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // Hide scroll hint on first move
+      gsap.to('.scroll', {
+        autoAlpha: 0,
+        duration: 0.2,
+        scrollTrigger: {
+          trigger: '.mwg_effect005',
+          start: 'top top',
+          end: 'top top-=1',
+          toggleActions: 'play none reverse none'
+        }
+      });
+
+      const words = gsap.utils.toArray('.headline .word .word-inner');
+      gsap.set(words, { xPercent: 120, autoAlpha: 0 });
+      gsap.set('.body-paragraph, .byline', { autoAlpha: 0 });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.pin-height',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.6,
+          pin: '.container'
+        }
+      });
+
+      // Word-by-word stagger (PRIMARY · mwg_005): words slide in from the right,
+      // each staggered after the previous. Paced power4 ease gives the editorial weight.
+      tl.to(words, {
+        xPercent: 0,
+        autoAlpha: 1,
+        stagger: 0.9,
+        duration: 1.0,
+        ease: 'power4.out'
+      }, 0);
+
+      // Body paragraph + byline fade (SECONDARY · mwg_004 in spirit):
+      // the second half of scroll resolves the lower block into place.
+      tl.to('.body-paragraph', {
+        autoAlpha: 1,
+        duration: 1.6,
+        ease: 'power2.out'
+      }, '>-0.4')
+        .to('.byline', {
+          autoAlpha: 1,
+          duration: 1.0,
+          ease: 'power2.out'
+        }, '<+0.4');
+    });
+  </script>
+
+</body>
+</html>

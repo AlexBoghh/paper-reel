@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "timestamp": "2026-04-17-hero-words-cards-stack",
+  "parent": null,
+  "viewport": { "w": 1440, "h": 900 },
+  "duration": 100,
+  "citations": [
+    {
+      "recipeId": "mwg_004",
+      "role": "PRIMARY",
+      "category": "TEXT",
+      "opts": {
+        "rootSelector": ".mwg_effect004",
+        "pinHeightSelector": ".mwg_effect004 .pin-height",
+        "containerSelector": ".mwg_effect004 .container",
+        "paragraphSelector": ".mwg_effect004 .paragraph",
+        "staggerEach": 0.2
+      }
+    },
+    {
+      "recipeId": "mwg_042",
+      "role": "SECONDARY",
+      "category": "CARD SCROLL",
+      "opts": {
+        "rootSelector": ".mwg_effect042",
+        "pinHeightSelector": ".mwg_effect042 .pin-height",
+        "containerSelector": ".mwg_effect042 .container",
+        "mediaSelector": ".mwg_effect042 .media",
+        "gap": 30
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "t1-words-slide",
+      "recipeId": "mwg_004",
+      "scrollRange": [0, 42],
+      "primitives": [
+        {
+          "kind": "translateX",
+          "selector": ".mwg_effect004 .paragraph .word",
+          "from": 960,
+          "to": 0,
+          "ease": "power1.inOut",
+          "stagger": { "count": 7, "amount": 0.08 }
+        }
+      ]
+    },
+    {
+      "id": "t2-cards-advance",
+      "recipeId": "mwg_042",
+      "scrollRange": [57, 100],
+      "primitives": [
+        {
+          "kind": "translateY",
+          "selector": ".mwg_effect042 .media",
+          "from": 0,
+          "to": -60,
+          "ease": "back.inOut(3)",
+          "stagger": { "count": 3, "amount": 0.15 }
+        }
+      ]
+    }
+  ],
+  "params": {
+    "mwg_004": {
+      "pin": true,
+      "scrub": true,
+      "ease": "power1.inOut",
+      "stagger": 0.2,
+      "start": "top top",
+      "end": "bottom bottom"
+    },
+    "mwg_042": {
+      "pin": true,
+      "scrub": 0.5,
+      "ease": "back.inOut(3)",
+      "start": "top top",
+      "end": "bottom bottom"
+    }
+  },
+  "captions": [
+    "Pin engages — headline parked off-canvas right.",
+    "Words begin sliding in — first line arriving, staggered.",
+    "Headline nearly assembled — tail words landing.",
+    "Headline fully revealed — paragraph at rest.",
+    "Pin handoff — card deck enters, three cards stacked.",
+    "Top card rising and departing — deck advances.",
+    "Card 2 departing — card 3 now fronted.",
+    "Final card on its way out — scene resolves."
+  ]
+}

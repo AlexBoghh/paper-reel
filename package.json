@@ -1,0 +1,25 @@
+{
+  "name": "paper-motion-tool",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "sample": "node tools/sample-timeline.mjs",
+    "compose": "node tools/compose-export.mjs",
+    "validate": "node tools/validate-export.mjs",
+    "repack": "node tools/repack-skill.mjs"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "@browserbasehq/sdk": "^2.10.0",
+    "adm-zip": "^0.5.10",
+    "cloudinary": "^2.9.0",
+    "dotenv": "^17.4.2",
+    "gsap": "^3.12.5",
+    "playwright-core": "^1.59.1"
+  }
+}

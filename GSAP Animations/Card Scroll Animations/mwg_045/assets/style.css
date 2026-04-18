@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+/* NORMALIZE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* NORMALIZE */
+
+body {
+    background: #121212;
+    color: #F1F1F1;
+    overflow: hidden;
+}
+.mwg_effect045 {
+    height: 100vh;
+    perspective: 150vw;
+} 
+.mwg_effect045 .text {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    text-transform: uppercase;
+    font: 500 normal clamp(18px, 2vw, 40px) / normal 'Inter', sans-serif;
+    letter-spacing: -0.03em;
+}
+.mwg_effect045 .root {
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.mwg_effect045 .slide {
+    width: 56vw;
+    aspect-ratio: 1.75;
+    position: absolute;
+    top: calc(50% - 14vw); /* Not exactly half to center with perspective */
+    left: calc(50% - 30vw);
+}
+.mwg_effect045 .content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

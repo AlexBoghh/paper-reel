@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "timestamp": "2026-04-17-hero-simul-words-stack",
+  "parent": null,
+  "viewport": { "w": 1440, "h": 900 },
+  "duration": 100,
+  "citations": [
+    {
+      "recipeId": "mwg_004",
+      "role": "PRIMARY",
+      "category": "TEXT",
+      "opts": {
+        "rootSelector": ".mwg_effect004",
+        "pinHeightSelector": ".mwg_effect004 .pin-height",
+        "containerSelector": ".mwg_effect004 .container",
+        "paragraphSelector": ".mwg_effect004 .paragraph",
+        "staggerEach": 0.2
+      }
+    },
+    {
+      "recipeId": "mwg_042",
+      "role": "SECONDARY",
+      "category": "CARD SCROLL",
+      "opts": {
+        "rootSelector": ".mwg_effect042",
+        "pinHeightSelector": ".mwg_effect042 .pin-height",
+        "containerSelector": ".mwg_effect042 .container",
+        "mediaSelector": ".mwg_effect042 .media",
+        "gap": 30
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "headline-reveal",
+      "recipeId": "mwg_004",
+      "scrollRange": [0, 48],
+      "primitives": [
+        {
+          "kind": "translateX",
+          "selector": ".mwg_effect004 .paragraph .word",
+          "from": 100,
+          "to": 0,
+          "ease": "power1.inOut",
+          "stagger": { "count": 12, "amount": 0.08 }
+        }
+      ]
+    },
+    {
+      "id": "card-stack",
+      "recipeId": "mwg_042",
+      "scrollRange": [48, 100],
+      "primitives": [
+        {
+          "kind": "translateY",
+          "selector": ".mwg_effect042 .media",
+          "from": 60,
+          "to": -50,
+          "ease": "back.inOut(3)",
+          "stagger": { "count": 3, "amount": 0.18 }
+        }
+      ]
+    }
+  ],
+  "params": {
+    "mwg_004": {
+      "pin": true,
+      "scrub": true,
+      "ease": "power1.inOut",
+      "stagger": 0.2,
+      "start": "top top",
+      "end": "bottom bottom"
+    },
+    "mwg_042": {
+      "pin": true,
+      "scrub": 0.5,
+      "ease": "back.inOut(3)",
+      "start": "top top",
+      "end": "bottom bottom"
+    }
+  },
+  "captions": [
+    "Hero at rest. Words parked off-canvas right.",
+    "First wave slides in — line one assembling.",
+    "Paragraph tight, tail words still arriving.",
+    "Headline landed. Hero at rest.",
+    "Pin handoff. Deck of three emerges on centerline.",
+    "Top card departs. Second card fronted.",
+    "Second card exits. Third card fronted.",
+    "Deck resolved. Last card reaches its mark."
+  ],
+  "content": {
+    "mwg_004": {
+      "headline": "We design systems where motion and scroll speak in the same voice."
+    },
+    "mwg_042": {
+      "cards": [
+        { "label": "ATLAS · 2024 · EDITORIAL", "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=1100&fit=crop" },
+        { "label": "MERIDIAN · 2024 · PRODUCT", "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=1100&fit=crop" },
+        { "label": "KINVARA · 2025 · BRAND FILM", "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&h=1100&fit=crop" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "timestamp": "2026-04-17-jazzy-stack",
+  "parent": null,
+  "viewport": { "w": 1440, "h": 900 },
+  "duration": 100,
+  "citations": [
+    {
+      "recipeId": "mwg_010", "role": "PRIMARY", "category": "TEXT",
+      "opts": { "textSelector": ".hero .text", "containerSelector": ".hero .container" }
+    },
+    {
+      "recipeId": "mwg_042", "role": "SECONDARY", "category": "CARD SCROLL",
+      "opts": { "rootSelector": ".features", "mediaSelector": ".features .media", "pinHeightSelector": ".features .pin-height", "containerSelector": ".features .container" }
+    }
+  ],
+  "timeline": [
+    { "id": "marquee", "recipeId": "mwg_010", "scrollRange": [0, 50],
+      "primitives": [{ "kind": "translateX", "selector": ".hero .text",
+                       "from": 0, "to": -2400, "ease": "none" }] },
+    { "id": "stack", "recipeId": "mwg_042", "scrollRange": [50, 100],
+      "primitives": [{ "kind": "translateY", "selector": ".features .media",
+                       "from": 60, "to": -30, "ease": "back.inOut(3)",
+                       "stagger": { "count": 3, "amount": 0.15 } }] }
+  ],
+  "params": {
+    "mwg_010": { "pin": true, "scrub": true, "ease": "none" },
+    "mwg_042": { "pin": true, "scrub": 0.5, "ease": "back.inOut(3)", "start": "top top", "end": "bottom bottom" }
+  },
+  "content": {
+    "mwg_010": { "headline": "Cite not invent" },
+    "mwg_042": {
+      "cards": [
+        { "label": "Research" },
+        { "label": "Cite" },
+        { "label": "Storyboard" },
+        { "label": "Ship" }
+      ]
+    }
+  },
+  "captions": ["rest","marquee enters","mid-pin","exit","deck assembles","card 1","card 2","settled"]
+}

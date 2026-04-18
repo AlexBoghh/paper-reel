@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+reel.skill
+
+# Scratch / work-in-progress tool files
+tools/_*
+
+# Capture intermediates
+previews/frames_tmp/
+previews/frames_tmp_bb/
+
+# Agent internals (not for public repo)
+.claude/
+.beads/
+.remember/
+.planning/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Editor
+.vscode/
+.idea/

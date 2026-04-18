@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "timestamp": "2026-04-17-headline-words-three-cards",
+  "parent": null,
+  "viewport": { "w": 1440, "h": 900 },
+  "duration": 100,
+  "citations": [
+    {
+      "recipeId": "mwg_004",
+      "role": "PRIMARY",
+      "category": "TEXT",
+      "opts": {
+        "rootSelector": ".mwg_effect004",
+        "pinHeightSelector": ".mwg_effect004 .pin-height",
+        "containerSelector": ".mwg_effect004 .container",
+        "paragraphSelector": ".mwg_effect004 .paragraph",
+        "staggerEach": 0.2
+      }
+    },
+    {
+      "recipeId": "mwg_042",
+      "role": "SECONDARY",
+      "category": "CARD SCROLL",
+      "opts": {
+        "rootSelector": ".mwg_effect042",
+        "pinHeightSelector": ".mwg_effect042 .pin-height",
+        "containerSelector": ".mwg_effect042 .container",
+        "mediaSelector": ".mwg_effect042 .media",
+        "gap": 30
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "words-in",
+      "recipeId": "mwg_004",
+      "scrollRange": [0, 42],
+      "primitives": [
+        {
+          "kind": "translateX",
+          "selector": ".mwg_effect004 .paragraph .word",
+          "from": 100,
+          "to": 0,
+          "ease": "power1.inOut"
+        }
+      ]
+    },
+    {
+      "id": "cards-stack",
+      "recipeId": "mwg_042",
+      "scrollRange": [42, 100],
+      "primitives": [
+        {
+          "kind": "translateY",
+          "selector": ".mwg_effect042 .media",
+          "from": 0,
+          "to": -30,
+          "ease": "back.inOut(3)"
+        }
+      ]
+    }
+  ],
+  "params": {
+    "mwg_004": {
+      "pin": true,
+      "scrub": true,
+      "ease": "power1.inOut",
+      "stagger": 0.2,
+      "start": "top top",
+      "end": "bottom bottom"
+    },
+    "mwg_042": {
+      "pin": true,
+      "scrub": 0.5,
+      "ease": "back.inOut(3)",
+      "start": "top top",
+      "end": "bottom bottom"
+    }
+  },
+  "captions": [
+    "Words stacked off-screen right. Deck waits below.",
+    "First words land on the left. Deck idle.",
+    "Paragraph assembles mid-scroll.",
+    "Headline settles. Deck prepares to reveal.",
+    "Top card steps forward. Headline holds.",
+    "Second card rises. Deck depth deepens.",
+    "Third card ascends. Earlier cards gone.",
+    "Final card holds the stage. Reel ends."
+  ],
+  "content": {
+    "mwg_004": {
+      "headline": "Dispatches from three distant coastlines — written slow, arriving one word at a time."
+    },
+    "mwg_042": {
+      "cards": [
+        { "label": "Marfa, TX" },
+        { "label": "Tasmania" },
+        { "label": "Lofoten" }
+      ]
+    }
+  }
+}
